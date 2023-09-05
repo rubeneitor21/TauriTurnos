@@ -1,6 +1,27 @@
+"use client"
 import Image from 'next/image'
+import { useEffect } from 'react'
+import Link from 'next/link'
 
 export default function Home() {
+  
+  useEffect(() => {
+    function handleContextMenu(event: Event) {
+      event.preventDefault()
+      console.log(`RightClick prevented on main`)
+    }
+
+    function handleNavigationButtons(event: MouseEvent) {
+      if (event.button == 3 || event.button == 4) {
+        event.preventDefault()
+      }
+    }
+
+    const main = document.querySelector("main")
+    main?.addEventListener("contextmenu", handleContextMenu)
+    main?.addEventListener("mouseup", handleNavigationButtons)
+  })
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
@@ -107,6 +128,9 @@ export default function Home() {
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
+        
+        <Link href="/Prueba">Prueba</Link>
+
       </div>
     </main>
   )
