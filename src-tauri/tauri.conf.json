@@ -48,6 +48,12 @@
         "startDragging": false,
         "unmaximize": false,
         "unminimize": false
+      },
+      "process": {
+        "all": false,
+        "exit": true,
+        "relaunch": false,
+        "relaunchDangerousAllowSymlinkMacos": false
       }
     },
     "bundle": {
