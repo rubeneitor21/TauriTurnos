@@ -12,7 +12,7 @@ export default function TitleScreen() {
 
     /* ----------------------- Some TS bullshit types gymnastics ---------------------- */
 
-    const navlang = navigator.language
+    const navlang = navigator.language.slice(0,2)
 
     console.log(navlang)
 
