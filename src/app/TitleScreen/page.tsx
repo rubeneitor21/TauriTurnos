@@ -32,7 +32,5 @@ export default function TitleScreen() {
                 {text.logginButtonText[LOCALE]}
             </Link>
         </main>
-        
-        // <Image src={"/iconoSteam.jpg"} alt="Hola"/>
     )
 }
