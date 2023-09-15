@@ -4,7 +4,6 @@ import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import text from '../../../public/translations/menu.json'
-import { error } from "console"
 
 export default function TitleScreen() {
     
@@ -30,7 +29,7 @@ export default function TitleScreen() {
              href={"/GameMenus"}
              className="absolute border rounded left-[50%] translate-x-[-50%] top-[80%] w-[15vw] p-5 h-auto text-center cursor-pointer text-white bg-purple-900 hover:bg-purple-800 duration-100 ease-in focus:bg-purple-800 border-slate-800"
             >
-            {text.logginButtonText[LOCALE]}
+                {text.logginButtonText[LOCALE]}
             </Link>
         </main>
         
