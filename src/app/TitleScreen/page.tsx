@@ -10,16 +10,16 @@ export default function TitleScreen() {
     const router = useRouter()
 
     /* ----------------------- Some TS bullshit types gymnastics ---------------------- */
-
-    const navlang = navigator.language.slice(0,2)
-
-    console.log(navlang)
-
     let tempLang = 'en'
     
-    if (Object.keys(text.logginButtonText).includes(navlang)) {
-        tempLang = navlang
-    }
+    useEffect( () => {
+        const navlang = navigator.language.slice(0,2)
+        console.log(navlang)
+        if (Object.keys(text.logginButtonText).includes(navlang)) {
+            tempLang = navlang
+        }
+    })
+
     const LOCALE = tempLang as keyof typeof text.logginButtonText
 
     return (

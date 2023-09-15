@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation"
 import { useEffect } from "react"
 import text from "../../public/translations/intro.json"
 export default function Intro() {
+    
+    let tempLang = 'en'
 
     useEffect(() => {
         function closeVideoAndShowCursor(event: Event) {
@@ -17,21 +19,19 @@ export default function Intro() {
 
         window.addEventListener("keydown", skipIntroVideo)
         document.querySelector("video")?.addEventListener("ended", closeVideoAndShowCursor)
+
+        const navlang = navigator.language.slice(0,2)
+        console.log(navlang)
+
+        if (Object.keys(text.PressToSkipButton).includes(navlang)) {
+            tempLang = navlang
+        }
     })
 
-    const navlang = navigator.language.slice(0,2)
-
-    console.log(navlang)
-
-    let tempLang = 'en'
-    
-    if (Object.keys(text.PressToSkipButton).includes(navlang)) {
-        tempLang = navlang
-    }
     const LOCALE = tempLang as keyof typeof text.PressToSkipButton
-    
-    const router = useRouter()
 
+    const router = useRouter()
+    
     return (
         <main style={{cursor: "none"}}>
             <div className="bg-black text-white absolute z-[999] p-1 top-[80%] left-[50%] translate-x-[-50%]">
