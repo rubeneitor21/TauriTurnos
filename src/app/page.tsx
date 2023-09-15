@@ -31,7 +31,7 @@ export default function Intro() {
     const LOCALE = tempLang as keyof typeof text.PressToSkipButton
 
     const router = useRouter()
-    
+
     return (
         <main style={{cursor: "none"}}>
             <div className="bg-black text-white absolute z-[999] p-1 top-[80%] left-[50%] translate-x-[-50%]">

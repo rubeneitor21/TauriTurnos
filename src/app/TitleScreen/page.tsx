@@ -10,17 +10,15 @@ export default function TitleScreen() {
     const router = useRouter()
 
     /* ----------------------- Some TS bullshit types gymnastics ---------------------- */
-    let tempLang = 'en'
+    let LOCALE = 'en' as keyof typeof text.logginButtonText
     
     useEffect( () => {
         const navlang = navigator.language.slice(0,2)
         console.log(navlang)
         if (Object.keys(text.logginButtonText).includes(navlang)) {
-            tempLang = navlang
+            LOCALE = navlang as keyof typeof text.logginButtonText
         }
     })
-
-    const LOCALE = tempLang as keyof typeof text.logginButtonText
 
     return (
         <main className="bg-gradient-to-t from-gray-900 via-purple-900 to-violet-600 h-[100vh] w-full">
