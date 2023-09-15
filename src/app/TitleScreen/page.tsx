@@ -28,11 +28,10 @@ export default function TitleScreen() {
             <Link
              type="button"
              href={"/GameMenus"}
-             className="absolute border rounded left-[50%] translate-x-[-50%] top-[80%] w-[15vw] p-5 h-auto text-center cursor-pointer"
+             className="absolute border rounded left-[50%] translate-x-[-50%] top-[80%] w-[15vw] p-5 h-auto text-center cursor-pointer text-white bg-purple-900 hover:bg-purple-800 duration-100 ease-in focus:bg-purple-800 border-slate-800"
             >
             {text.logginButtonText[LOCALE]}
             </Link>
-            <Link href={"/"}>Back</Link>
         </main>
         
         // <Image src={"/iconoSteam.jpg"} alt="Hola"/>
