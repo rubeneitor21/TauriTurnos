@@ -1,26 +1,26 @@
 "use client"
-import {useRef, useEffect, useState} from 'react'
+import { useRef, useEffect, useState } from 'react'
 import Image from 'next/image'
 
-export default function MenusLayout({children}: {
+export default function MenusLayout({ children }: {
     children: React.ReactNode
 }) {
 
-    const [time, setTime] = useState(new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}))
+    const [time, setTime] = useState(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
 
-    useEffect ( () => {
+    useEffect(() => {
         const interval = setInterval(() => {
-            setTime(new Date().toLocaleTimeString([], {hour: '2-digit', minute: '2-digit'}))
+            setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }))
         }, 1000)
 
         return () => clearInterval(interval)
-        
+
     }, [])
 
     return (
         <div>
             <header
-                className='absolute flex flex-row justify-center place-content-center' 
+                className='absolute flex flex-row justify-center place-content-center'
             >
                 <Image
                     className='p-2'
