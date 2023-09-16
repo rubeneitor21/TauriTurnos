@@ -27,7 +27,7 @@ export default function MenusLayout({children}: {
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCzrycnWVxThOo4ft3tjyyWWEX0tSTL-OJ86qttknmgZPsetGkX66Vu43uvgdAW8TDKQU&usqp=CAU"
                     alt='Profile Picture' width={50} height={50}>
                 </Image>
-                <div className='text-white'>{"Rubeneitor2"} <br /> LV:{25} </div>
+                <div className='text-white'>{"Rubeneitor2"} <br /> LV: {25} </div>
                 <div
                     className='absolute left-[50vw] translate-x-[-50%]'
                 >

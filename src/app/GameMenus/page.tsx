@@ -14,7 +14,7 @@ export default function GameMenu() {
             <Layout>
                 <Link
                     type="button"
-                    href={"/GameMenus"}
+                    href={"/TitleScreen"}
                     className="absolute border rounded left-[50%] translate-x-[-50%] top-[50%] w-[15vw] p-5 h-auto text-center cursor-pointer"
                 >
                 </Link>
