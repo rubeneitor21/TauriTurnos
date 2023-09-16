@@ -2,11 +2,13 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import text from "../../public/translations/intro.json"
+import { useLanguage } from "@/Components/useLanguage"
+
 export default function Intro() {
     
-    let tempLang = 'en'
+    const lang = useLanguage() as keyof typeof text.PressToSkipButton
 
     useEffect(() => {
         function closeVideoAndShowCursor(event: Event) {
@@ -19,23 +21,15 @@ export default function Intro() {
 
         window.addEventListener("keydown", skipIntroVideo)
         document.querySelector("video")?.addEventListener("ended", closeVideoAndShowCursor)
-
-        const navlang = navigator.language.slice(0,2)
-        console.log(navlang)
-
-        if (Object.keys(text.PressToSkipButton).includes(navlang)) {
-            tempLang = navlang
-        }
     })
-
-    const LOCALE = tempLang as keyof typeof text.PressToSkipButton
+    
 
     const router = useRouter()
 
     return (
         <main style={{cursor: "none"}}>
             <div className="bg-black text-white absolute z-[999] p-1 top-[80%] left-[50%] translate-x-[-50%]">
-                {text.PressToSkipButton[LOCALE]}
+                {text.PressToSkipButton[lang]}
             </div>
             <video
                 id="intro"
