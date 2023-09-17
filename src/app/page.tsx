@@ -7,7 +7,7 @@ import text from "../../public/translations/intro.json"
 import { useLanguage } from "@/Components/useLanguage"
 
 export default function Intro() {
-    
+
     const lang = useLanguage() as keyof typeof text.PressToSkipButton
 
     useEffect(() => {
@@ -22,13 +22,13 @@ export default function Intro() {
         window.addEventListener("keydown", skipIntroVideo)
         document.querySelector("video")?.addEventListener("ended", closeVideoAndShowCursor)
     })
-    
+
 
     const router = useRouter()
 
     return (
-        <main style={{cursor: "none"}}>
-            <div className="bg-black text-white absolute z-[999] p-1 top-[80%] left-[50%] translate-x-[-50%]">
+        <main style={{ cursor: "none" }}>
+            <div className="bg-black rounded text-white absolute z-[999] p-1 top-[85%] left-[50%] translate-x-[-50%]">
                 {text.PressToSkipButton[lang]}
             </div>
             <video
@@ -38,7 +38,7 @@ export default function Intro() {
                 autoPlay
             />
         </main>
-        
+
         // <Image src={"/iconoSteam.jpg"} alt="Hola"/>
     )
 }

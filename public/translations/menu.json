@@ -2,5 +2,9 @@
     "logginButtonText": {
         "es": "Empezar",
         "en": "Start"
+    },
+    "loadingButtonText": {
+        "es": "Cargando...",
+        "en": "Loading..."
     }
 }
