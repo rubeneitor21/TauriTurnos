@@ -52,7 +52,8 @@ export default function TitleScreen() {
 
     return (
         <main className="h-[100vh] w-full" style={{
-            backgroundImage: `url(${images})`
+            backgroundImage: `url(${images})`,
+            backgroundSize: "100vw 100vh"
         }}>
             <div
                 className="fixed flex flex-col gap-5 justify-center items-center z-10 w-[100vw] h-[32vh] bottom-0"
