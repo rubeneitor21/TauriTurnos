@@ -34,6 +34,11 @@ export default function TitleScreen() {
 
     useEffect(() => {
 
+        fetch ("http://127.0.0.1:6969/user", {
+            method: "PUT",
+            body: JSON.stringify({"uudi": "j12ieoj12eij"})
+        }).then(r => r.text().then(t => console.log(t)))
+
         setImages(`/Background/${Math.floor(Math.random() * 4) + 1}.png`);
 
         (async () => {
