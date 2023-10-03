@@ -1,0 +1,14 @@
+[Unit]
+Description=Tauri Turnos service
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=root
+WorkingDirectory=/tauriturnos/
+ExecStart=npm run dev
+
+[Install]
+WantedBy=multi-user.target
